@@ -1,0 +1,1462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dr. Stelios Tsangarides | Obstetrician-Gynecologist</title>
+
+<style>
+  :root {
+    --primary: #3f8f8a;
+    --primary-dark: #2f6f6c;
+    --primary-light: #e9f7f6;
+    --secondary: #f7ede8;
+    --cream: #fbf8f5;
+    --white: #ffffff;
+    --text: #263238;
+    --muted: #6f7a7a;
+    --border: #dce8e6;
+    --shadow: 0 14px 35px rgba(47, 111, 108, 0.08);
+    --radius: 22px;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text);
+    background: var(--cream);
+    line-height: 1.7;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  /* LANGUAGE VISIBILITY FIX */
+  [data-lang="el"] {
+    display: none !important;
+  }
+
+  [data-lang="en"] {
+    display: inline !important;
+  }
+
+  body.el [data-lang="en"] {
+    display: none !important;
+  }
+
+  body.el [data-lang="el"] {
+    display: inline !important;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    min-height: 74px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+  }
+
+  .nav-logo strong {
+    font-size: 16px;
+    font-weight: 750;
+    color: var(--text);
+  }
+
+  .nav-logo span {
+    font-size: 12px;
+    color: var(--primary);
+    font-weight: 600;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1.7rem;
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  .nav-links a {
+    transition: color 0.2s ease;
+  }
+
+  .nav-links a:hover {
+    color: var(--primary-dark);
+  }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+  }
+
+  .language-toggle {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: var(--primary-light);
+    border: 1px solid #caebe8;
+    border-radius: 999px;
+    padding: 4px;
+  }
+
+  .language-toggle button {
+    border: none;
+    cursor: pointer;
+    border-radius: 999px;
+    padding: 6px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--primary-dark);
+    background: transparent;
+  }
+
+  .language-toggle button.active {
+    background: var(--white);
+    box-shadow: 0 4px 10px rgba(47, 111, 108, 0.12);
+  }
+
+  .nav-cta {
+    background: var(--primary);
+    color: #fff;
+    padding: 10px 21px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 650;
+    transition: 0.25s ease;
+    box-shadow: 0 8px 18px rgba(63, 143, 138, 0.22);
+    white-space: nowrap;
+  }
+
+  .nav-cta:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+  }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at top left, rgba(63, 143, 138, 0.16), transparent 32%),
+      radial-gradient(circle at bottom right, rgba(247, 237, 232, 0.95), transparent 36%),
+      linear-gradient(135deg, #ffffff 0%, #f3fbfa 55%, #fbf8f5 100%);
+    padding: 105px 7% 88px;
+  }
+
+  .hero-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--primary-light);
+    color: var(--primary-dark);
+    font-size: 13px;
+    font-weight: 650;
+    padding: 8px 16px;
+    border-radius: 999px;
+    border: 1px solid #caebe8;
+    margin-bottom: 1.4rem;
+  }
+
+  .hero-badge::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background: var(--primary);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .hero h1 {
+    font-size: clamp(34px, 5vw, 58px);
+    line-height: 1.08;
+    font-weight: 800;
+    letter-spacing: -1.4px;
+    color: var(--text);
+    margin-bottom: 1rem;
+  }
+
+  .hero h2 {
+    font-size: clamp(18px, 2.4vw, 25px);
+    color: var(--primary-dark);
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+  }
+
+  .hero p {
+    max-width: 610px;
+    color: var(--muted);
+    font-size: 16px;
+    margin-bottom: 2rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 26px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 700;
+    transition: 0.25s ease;
+  }
+
+  .btn-primary {
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 12px 22px rgba(63, 143, 138, 0.24);
+  }
+
+  .btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    background: white;
+    color: var(--primary-dark);
+    border: 1px solid var(--border);
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--primary);
+    background: var(--primary-light);
+    transform: translateY(-2px);
+  }
+
+  .hero-card {
+    background: rgba(255, 255, 255, 0.84);
+    border: 1px solid var(--border);
+    border-radius: 28px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(16px);
+  }
+
+  .hero-card-top {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .doctor-initials {
+    width: 76px;
+    height: 76px;
+    border-radius: 23px;
+    background: linear-gradient(135deg, var(--primary), #7fc7c2);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 800;
+    box-shadow: 0 12px 22px rgba(63, 143, 138, 0.22);
+    flex-shrink: 0;
+  }
+
+  .hero-card h3 {
+    font-size: 19px;
+    margin-bottom: 2px;
+  }
+
+  .hero-card p {
+    margin: 0;
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  .quick-info {
+    display: grid;
+    gap: 12px;
+  }
+
+  .quick-info-item {
+    background: #fbfefe;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 14px 16px;
+  }
+
+  .quick-info-item span.info-label {
+    display: block !important;
+    font-size: 12px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 3px;
+  }
+
+  .quick-info-item strong {
+    display: block;
+    font-size: 15px;
+    color: var(--text);
+    font-weight: 700;
+  }
+
+  /* COMMON */
+  section {
+    padding: 78px 7%;
+  }
+
+  .section-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    max-width: 760px;
+    margin-bottom: 2.5rem;
+  }
+
+  .section-label {
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    color: var(--primary);
+    margin-bottom: 0.65rem;
+  }
+
+  .section-title {
+    font-size: clamp(26px, 4vw, 40px);
+    line-height: 1.18;
+    font-weight: 800;
+    color: var(--text);
+    letter-spacing: -0.6px;
+    margin-bottom: 1rem;
+  }
+
+  .section-sub {
+    font-size: 16px;
+    color: var(--muted);
+  }
+
+  /* ABOUT */
+  .about {
+    background: var(--white);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 2rem;
+    align-items: stretch;
+  }
+
+  .about-profile {
+    background: linear-gradient(145deg, var(--primary-light), #ffffff);
+    border: 1px solid var(--border);
+    border-radius: 28px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+  }
+
+  .about-avatar {
+    width: 88px;
+    height: 88px;
+    border-radius: 26px;
+    background: linear-gradient(135deg, var(--primary), #7fc7c2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 850;
+    color: white;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-profile h3 {
+    font-size: 22px;
+    margin-bottom: 0.3rem;
+  }
+
+  .about-profile .role {
+    color: var(--primary-dark);
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 1.4rem;
+  }
+
+  .doctor-highlights {
+    display: grid;
+    gap: 12px;
+    margin-top: 1.6rem;
+  }
+
+  .highlight-item {
+    padding: 13px 15px;
+    background: rgba(255, 255, 255, 0.78);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+  }
+
+  .highlight-item strong {
+    display: block;
+    color: var(--text);
+    font-size: 14px;
+    margin-bottom: 2px;
+  }
+
+  .highlight-item span.description {
+    display: block !important;
+    color: var(--muted);
+    font-size: 13.5px;
+    line-height: 1.45;
+  }
+
+  .about-content {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 28px;
+    padding: 2.2rem;
+    box-shadow: var(--shadow);
+  }
+
+  .about-content p {
+    color: var(--muted);
+    font-size: 15.5px;
+    margin-bottom: 1rem;
+  }
+
+  .about-content p:last-child {
+    margin-bottom: 0;
+  }
+
+  .credentials {
+    margin-top: 2rem;
+  }
+
+  .credentials-title {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: var(--text);
+  }
+
+  .credentials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .credential-card {
+    border: 1px solid var(--border);
+    background: linear-gradient(145deg, #ffffff, #f8fdfc);
+    border-radius: 18px;
+    padding: 1.1rem;
+  }
+
+  .credential-card .number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    background: var(--primary-light);
+    color: var(--primary-dark);
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 800;
+    margin-bottom: 0.8rem;
+  }
+
+  .credential-card h4 {
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 0.45rem;
+  }
+
+  .credential-card ul {
+    list-style: none;
+    display: grid;
+    gap: 0.35rem;
+  }
+
+  .credential-card li {
+    position: relative;
+    padding-left: 1.2rem;
+    font-size: 13.8px;
+    color: var(--muted);
+    line-height: 1.45;
+  }
+
+  .credential-card li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--primary);
+    font-weight: 800;
+  }
+
+  /* SERVICES */
+  .services {
+    background: linear-gradient(180deg, var(--cream), #ffffff);
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+
+  .service-card {
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    padding: 1.5rem;
+    transition: 0.25s ease;
+    box-shadow: 0 8px 22px rgba(47, 111, 108, 0.04);
+  }
+
+  .service-card:hover {
+    transform: translateY(-4px);
+    border-color: #b7ddda;
+    box-shadow: var(--shadow);
+  }
+
+  .service-icon {
+    width: 46px;
+    height: 46px;
+    background: var(--primary-light);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .service-icon svg {
+    width: 22px;
+    height: 22px;
+    stroke: var(--primary-dark);
+    fill: none;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .service-card h4 {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 0.45rem;
+  }
+
+  .service-card p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+
+  /* CONTACT */
+  .contact {
+    background: var(--white);
+  }
+
+  .contact-box {
+    background: linear-gradient(145deg, #ffffff, #f5fbfa);
+    border: 1px solid var(--border);
+    border-radius: 28px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 2rem;
+    align-items: stretch;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contact-item {
+    display: flex;
+    gap: 14px;
+    padding: 1rem;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.76);
+    border: 1px solid var(--border);
+  }
+
+  .contact-item-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 15px;
+    background: var(--primary-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .contact-item-icon svg {
+    width: 20px;
+    height: 20px;
+    stroke: var(--primary-dark);
+    fill: none;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .contact-item-text .label {
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+  }
+
+  .contact-item-text .value {
+    font-size: 15.5px;
+    color: var(--text);
+    font-weight: 750;
+  }
+
+  .contact-item-text .sub {
+    font-size: 13.5px;
+    color: var(--muted);
+  }
+
+  .map-wrap {
+    min-height: 360px;
+    border-radius: 22px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: #eef7f6;
+  }
+
+  .map-wrap iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 360px;
+    border: none;
+    display: block;
+  }
+
+  /* FOOTER */
+  footer {
+    background: #f3f2ef;
+    border-top: 1px solid var(--border);
+    padding: 2rem 7%;
+    text-align: center;
+  }
+
+  footer p {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+
+  footer strong {
+    color: var(--text);
+  }
+
+  footer a {
+    color: var(--primary-dark);
+    font-weight: 700;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 980px) {
+    .hero-inner,
+    .about-grid,
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .services-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero {
+      padding-top: 90px;
+    }
+  }
+
+  @media (max-width: 760px) {
+    nav {
+      padding: 1rem 5%;
+      flex-wrap: wrap;
+    }
+
+    .nav-links {
+      order: 3;
+      width: 100%;
+      justify-content: center;
+      gap: 1.1rem;
+      font-size: 13px;
+    }
+
+    .nav-actions {
+      margin-left: auto;
+    }
+
+    .nav-cta {
+      padding: 9px 14px;
+      font-size: 13px;
+    }
+
+    .hero,
+    section {
+      padding-left: 5%;
+      padding-right: 5%;
+    }
+
+    .hero {
+      padding-top: 70px;
+      padding-bottom: 65px;
+    }
+
+    .hero-actions {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      width: 100%;
+    }
+
+    .services-grid,
+    .credentials-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .nav-logo strong {
+      font-size: 14px;
+    }
+
+    .nav-logo span {
+      font-size: 11px;
+    }
+
+    .language-toggle button {
+      padding: 5px 8px;
+    }
+
+    .hero-card,
+    .about-profile,
+    .about-content,
+    .contact-box {
+      padding: 1.4rem;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <strong>Dr. Stelios Tsangarides</strong>
+    <span>
+      <span data-lang="en">Obstetrician-Gynecologist</span>
+      <span data-lang="el">Μαιευτήρας-Γυναικολόγος</span>
+    </span>
+  </a>
+
+  <div class="nav-links">
+    <a href="#about">
+      <span data-lang="en">About</span>
+      <span data-lang="el">Σχετικά</span>
+    </a>
+
+    <a href="#services">
+      <span data-lang="en">Services</span>
+      <span data-lang="el">Υπηρεσίες</span>
+    </a>
+
+    <a href="#contact">
+      <span data-lang="en">Contact</span>
+      <span data-lang="el">Επικοινωνία</span>
+    </a>
+  </div>
+
+  <div class="nav-actions">
+    <div class="language-toggle">
+      <button type="button" id="btnEn" class="active" onclick="setLanguage('en')">EN</button>
+      <button type="button" id="btnEl" onclick="setLanguage('el')">GR</button>
+    </div>
+
+    <a href="tel:+35722424140" class="nav-cta">
+      <span data-lang="en">Call Clinic</span>
+      <span data-lang="el">Καλέστε</span>
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+
+    <div>
+      <div class="hero-badge">
+        <span data-lang="en">Women’s Health Clinic · Engomi, Nicosia</span>
+        <span data-lang="el">Ιατρείο Γυναικείας Υγείας · Έγκωμη, Λευκωσία</span>
+      </div>
+
+      <h1>
+        <span data-lang="en">Professional care for every stage of women’s health.</span>
+        <span data-lang="el">Επαγγελματική φροντίδα για κάθε στάδιο της γυναικείας υγείας.</span>
+      </h1>
+
+      <h2>Dr. Stelios Tsangarides</h2>
+
+      <p>
+        <span data-lang="en">
+          Obstetrician-Gynecologist providing comprehensive, respectful and patient-focused care
+          in a calm and professional clinical environment.
+        </span>
+
+        <span data-lang="el">
+          Μαιευτήρας-Γυναικολόγος που προσφέρει ολοκληρωμένη, διακριτική και ανθρωποκεντρική
+          ιατρική φροντίδα σε ένα ήρεμο και επαγγελματικό περιβάλλον.
+        </span>
+      </p>
+
+      <div class="hero-actions">
+        <a href="tel:+35722424140" class="btn-primary">
+          <span data-lang="en">Call to Arrange an Appointment</span>
+          <span data-lang="el">Καλέστε για Ραντεβού</span>
+        </a>
+
+        <a href="#services" class="btn-secondary">
+          <span data-lang="en">View Services</span>
+          <span data-lang="el">Δείτε Υπηρεσίες</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <div class="hero-card-top">
+        <div class="doctor-initials">ST</div>
+
+        <div>
+          <h3>Dr. Stelios Tsangarides</h3>
+          <p>
+            <span data-lang="en">Obstetrician-Gynecologist</span>
+            <span data-lang="el">Μαιευτήρας-Γυναικολόγος</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="quick-info">
+
+        <div class="quick-info-item">
+          <span class="info-label">
+            <span data-lang="en">Clinic Location</span>
+            <span data-lang="el">Τοποθεσία Ιατρείου</span>
+          </span>
+          <strong>Ithakis 84 AB, Engomi 2400, Nicosia</strong>
+        </div>
+
+        <div class="quick-info-item">
+          <span class="info-label">
+            <span data-lang="en">Appointments</span>
+            <span data-lang="el">Ραντεβού</span>
+          </span>
+          <strong>
+            <span data-lang="en">Please call the clinic to arrange your visit</span>
+            <span data-lang="el">Παρακαλώ καλέστε το ιατρείο για να διευθετήσετε την επίσκεψή σας</span>
+          </strong>
+        </div>
+
+        <div class="quick-info-item">
+          <span class="info-label">
+            <span data-lang="en">Contact Number</span>
+            <span data-lang="el">Τηλέφωνο Επικοινωνίας</span>
+          </span>
+          <strong><a href="tel:+35722424140">22 424 140</a></strong>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="section-inner">
+
+    <div class="section-header">
+      <p class="section-label">
+        <span data-lang="en">About the Doctor</span>
+        <span data-lang="el">Σχετικά με τον Ιατρό</span>
+      </p>
+
+      <h2 class="section-title">
+        <span data-lang="en">Medical experience, professional guidance and personal care.</span>
+        <span data-lang="el">Ιατρική εμπειρία, επαγγελματική καθοδήγηση και προσωπική φροντίδα.</span>
+      </h2>
+
+      <p class="section-sub">
+        <span data-lang="en">
+          A trusted medical practice focused on women’s health, pregnancy care, prevention and clear communication with every patient.
+        </span>
+
+        <span data-lang="el">
+          Ένα ιατρείο με επίκεντρο τη γυναικεία υγεία, την παρακολούθηση εγκυμοσύνης, την πρόληψη και την ξεκάθαρη επικοινωνία με κάθε ασθενή.
+        </span>
+      </p>
+    </div>
+
+    <div class="about-grid">
+
+      <div class="about-profile">
+        <div class="about-avatar">ST</div>
+
+        <h3>Dr. Stelios Tsangarides</h3>
+
+        <p class="role">
+          <span data-lang="en">Obstetrician-Gynecologist · Engomi, Nicosia</span>
+          <span data-lang="el">Μαιευτήρας-Γυναικολόγος · Έγκωμη, Λευκωσία</span>
+        </p>
+
+        <div class="doctor-highlights">
+
+          <div class="highlight-item">
+            <strong>
+              <span data-lang="en">30+ Years of Experience</span>
+              <span data-lang="el">30+ Χρόνια Εμπειρίας</span>
+            </strong>
+            <span class="description">
+              <span data-lang="en">Extensive clinical experience in obstetrics and gynecology.</span>
+              <span data-lang="el">Πολυετής κλινική εμπειρία στη μαιευτική και γυναικολογία.</span>
+            </span>
+          </div>
+
+          <div class="highlight-item">
+            <strong>
+              <span data-lang="en">Medical Studies in Italy</span>
+              <span data-lang="el">Ιατρικές Σπουδές στην Ιταλία</span>
+            </strong>
+            <span class="description">
+              <span data-lang="en">International academic background and medical training.</span>
+              <span data-lang="el">Διεθνές ακαδημαϊκό υπόβαθρο και ιατρική εκπαίδευση.</span>
+            </span>
+          </div>
+
+          <div class="highlight-item">
+            <strong>
+              <span data-lang="en">Patient-Centered Approach</span>
+              <span data-lang="el">Ανθρωποκεντρική Προσέγγιση</span>
+            </strong>
+            <span class="description">
+              <span data-lang="en">Clear explanations, discretion and individualized medical care.</span>
+              <span data-lang="el">Σαφής ενημέρωση, διακριτικότητα και εξατομικευμένη φροντίδα.</span>
+            </span>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="about-content">
+
+        <p>
+          <span data-lang="en">
+            Dr. Stelios Tsangarides is an Obstetrician-Gynecologist based in Engomi, Nicosia, offering comprehensive medical care in women’s health, pregnancy monitoring, preventive gynecology and personalized follow-up.
+          </span>
+
+          <span data-lang="el">
+            Ο Δρ. Στέλιος Τσαγγαρίδης είναι Μαιευτήρας-Γυναικολόγος με ιατρείο στην Έγκωμη, Λευκωσία, προσφέροντας ολοκληρωμένη ιατρική φροντίδα στη γυναικεία υγεία, την παρακολούθηση εγκυμοσύνης, την προληπτική γυναικολογία και την εξατομικευμένη παρακολούθηση.
+          </span>
+        </p>
+
+        <p>
+          <span data-lang="en">
+            With more than 30 years of clinical experience, his practice combines professional medical knowledge with a calm and respectful approach, ensuring that each patient receives clear guidance and appropriate care.
+          </span>
+
+          <span data-lang="el">
+            Με περισσότερα από 30 χρόνια κλινικής εμπειρίας, η ιατρική του προσέγγιση συνδυάζει επιστημονική γνώση, επαγγελματισμό και σεβασμό προς κάθε ασθενή, προσφέροντας σαφή καθοδήγηση και κατάλληλη ιατρική φροντίδα.
+          </span>
+        </p>
+
+        <p>
+          <span data-lang="en">
+            His medical background includes studies in Italy and specialist training in Obstetrics and Gynecology, with experience across hospital and private practice environments.
+          </span>
+
+          <span data-lang="el">
+            Το ιατρικό του υπόβαθρο περιλαμβάνει σπουδές στην Ιταλία και ειδίκευση στη Μαιευτική και Γυναικολογία, με εμπειρία τόσο σε νοσοκομειακό όσο και σε ιδιωτικό περιβάλλον.
+          </span>
+        </p>
+
+        <div class="credentials">
+          <h3 class="credentials-title">
+            <span data-lang="en">Professional Background</span>
+            <span data-lang="el">Επαγγελματικό Υπόβαθρο</span>
+          </h3>
+
+          <div class="credentials-grid">
+
+            <div class="credential-card">
+              <div class="number">01</div>
+              <h4>
+                <span data-lang="en">Medical Education</span>
+                <span data-lang="el">Ιατρικές Σπουδές</span>
+              </h4>
+              <ul>
+                <li>
+                  <span data-lang="en">Medical studies completed in Italy.</span>
+                  <span data-lang="el">Ιατρικές σπουδές στην Ιταλία.</span>
+                </li>
+                <li>
+                  <span data-lang="en">Strong academic foundation in general medicine.</span>
+                  <span data-lang="el">Ισχυρή ακαδημαϊκή βάση στη γενική ιατρική.</span>
+                </li>
+                <li>
+                  <span data-lang="en">International medical training and clinical exposure.</span>
+                  <span data-lang="el">Διεθνής ιατρική εκπαίδευση και κλινική εμπειρία.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="credential-card">
+              <div class="number">02</div>
+              <h4>
+                <span data-lang="en">Specialist Training</span>
+                <span data-lang="el">Ειδικότητα</span>
+              </h4>
+              <ul>
+                <li>
+                  <span data-lang="en">Specialist training in Obstetrics and Gynecology.</span>
+                  <span data-lang="el">Ειδίκευση στη Μαιευτική και Γυναικολογία.</span>
+                </li>
+                <li>
+                  <span data-lang="en">Focus on pregnancy care and women’s health.</span>
+                  <span data-lang="el">Έμφαση στην παρακολούθηση εγκυμοσύνης και στη γυναικεία υγεία.</span>
+                </li>
+                <li>
+                  <span data-lang="en">Experience in both clinical and hospital settings.</span>
+                  <span data-lang="el">Εμπειρία σε κλινικό και νοσοκομειακό περιβάλλον.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="credential-card">
+              <div class="number">03</div>
+              <h4>
+                <span data-lang="en">Clinical Experience</span>
+                <span data-lang="el">Κλινική Εμπειρία</span>
+              </h4>
+              <ul>
+                <li>
+                  <span data-lang="en">More than 30 years of medical experience.</span>
+                  <span data-lang="el">Περισσότερα από 30 χρόνια ιατρικής εμπειρίας.</span>
+                </li>
+                <li>
+                  <span data-lang="en">Long-standing private practice in Nicosia.</span>
+                  <span data-lang="el">Πολυετής παρουσία σε ιδιωτικό ιατρείο στη Λευκωσία.</span>
+                </li>
+                <li>
+                  <span data-lang="en">Care for patients across different stages of life.</span>
+                  <span data-lang="el">Φροντίδα ασθενών σε διαφορετικά στάδια της ζωής.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="credential-card">
+              <div class="number">04</div>
+              <h4>
+                <span data-lang="en">Areas of Interest</span>
+                <span data-lang="el">Τομείς Ενδιαφέροντος</span>
+              </h4>
+              <ul>
+                <li>
+                  <span data-lang="en">Pregnancy monitoring and prenatal care.</span>
+                  <span data-lang="el">Παρακολούθηση εγκυμοσύνης και προγεννητική φροντίδα.</span>
+                </li>
+                <li>
+                  <span data-lang="en">Preventive gynecology and cervical health.</span>
+                  <span data-lang="el">Προληπτική γυναικολογία και υγεία τραχήλου.</span>
+                </li>
+                <li>
+                  <span data-lang="en">Ultrasound, menopause care and fertility guidance.</span>
+                  <span data-lang="el">Υπέρηχοι, φροντίδα εμμηνόπαυσης και συμβουλευτική γονιμότητας.</span>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="section-inner">
+
+    <div class="section-header">
+      <p class="section-label">
+        <span data-lang="en">Medical Services</span>
+        <span data-lang="el">Ιατρικές Υπηρεσίες</span>
+      </p>
+
+      <h2 class="section-title">
+        <span data-lang="en">Obstetric and gynecological services.</span>
+        <span data-lang="el">Μαιευτικές και γυναικολογικές υπηρεσίες.</span>
+      </h2>
+
+      <p class="section-sub">
+        <span data-lang="en">
+          The clinic provides a range of services related to women’s health, pregnancy care, preventive screening and gynecological follow-up.
+        </span>
+
+        <span data-lang="el">
+          Το ιατρείο παρέχει υπηρεσίες που αφορούν τη γυναικεία υγεία, την εγκυμοσύνη, την πρόληψη και τη γυναικολογική παρακολούθηση.
+        </span>
+      </p>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 21s-8-4.5-8-11.8A8 8 0 0 1 12 3a8 8 0 0 1 8 6.2C20 16.5 12 21 12 21z"/></svg>
+        </div>
+        <h4>
+          <span data-lang="en">Prenatal Care</span>
+          <span data-lang="el">Προγεννητική Φροντίδα</span>
+        </h4>
+        <p>
+          <span data-lang="en">Pregnancy monitoring, regular check-ups and medical guidance throughout pregnancy.</span>
+          <span data-lang="el">Παρακολούθηση εγκυμοσύνης, τακτικοί έλεγχοι και ιατρική καθοδήγηση.</span>
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <h4>
+          <span data-lang="en">Obstetric Ultrasound</span>
+          <span data-lang="el">Μαιευτικός Υπέρηχος</span>
+        </h4>
+        <p>
+          <span data-lang="en">Ultrasound examinations for pregnancy dating, monitoring and fetal development follow-up.</span>
+          <span data-lang="el">Υπερηχογραφικός έλεγχος για παρακολούθηση εγκυμοσύνης και ανάπτυξης του εμβρύου.</span>
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18"/></svg>
+        </div>
+        <h4>
+          <span data-lang="en">Gynecological Exams</span>
+          <span data-lang="el">Γυναικολογικές Εξετάσεις</span>
+        </h4>
+        <p>
+          <span data-lang="en">Routine gynecological examinations, Pap tests and preventive women’s health checks.</span>
+          <span data-lang="el">Τακτικές γυναικολογικές εξετάσεις, τεστ Παπανικολάου και προληπτικός έλεγχος.</span>
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h4>
+          <span data-lang="en">Cervical Care</span>
+          <span data-lang="el">Φροντίδα Τραχήλου</span>
+        </h4>
+        <p>
+          <span data-lang="en">Assessment, screening and follow-up for cervical health and related gynecological concerns.</span>
+          <span data-lang="el">Έλεγχος, αξιολόγηση και παρακολούθηση της υγείας του τραχήλου.</span>
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 3c-1.2 5.4-6 8.6-6 13a6 6 0 0 0 12 0c0-4.4-4.8-7.6-6-13z"/></svg>
+        </div>
+        <h4>
+          <span data-lang="en">Fertility Consultations</span>
+          <span data-lang="el">Συμβουλευτική Γονιμότητας</span>
+        </h4>
+        <p>
+          <span data-lang="en">Initial assessment and guidance for patients or couples seeking fertility-related advice.</span>
+          <span data-lang="el">Αρχική αξιολόγηση και καθοδήγηση για θέματα γονιμότητας.</span>
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l7.78-7.78a5.5 5.5 0 0 0 1.06-8.84z"/></svg>
+        </div>
+        <h4>
+          <span data-lang="en">Menopause Care</span>
+          <span data-lang="el">Φροντίδα Εμμηνόπαυσης</span>
+        </h4>
+        <p>
+          <span data-lang="en">Support and medical guidance for perimenopause, menopause symptoms and related concerns.</span>
+          <span data-lang="el">Υποστήριξη και ιατρική καθοδήγηση για την περιεμμηνόπαυση και την εμμηνόπαυση.</span>
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+        </div>
+        <h4>
+          <span data-lang="en">Contraception Advice</span>
+          <span data-lang="el">Συμβουλές Αντισύλληψης</span>
+        </h4>
+        <p>
+          <span data-lang="en">Professional counselling on contraception options according to each patient’s needs.</span>
+          <span data-lang="el">Επαγγελματική συμβουλευτική για επιλογές αντισύλληψης ανάλογα με τις ανάγκες κάθε ασθενούς.</span>
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h4>
+          <span data-lang="en">Postnatal Follow-up</span>
+          <span data-lang="el">Μεταγεννητική Παρακολούθηση</span>
+        </h4>
+        <p>
+          <span data-lang="en">Follow-up care after delivery, including recovery checks and postnatal guidance.</span>
+          <span data-lang="el">Παρακολούθηση μετά τον τοκετό, έλεγχος αποκατάστασης και σχετική καθοδήγηση.</span>
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </div>
+        <h4>
+          <span data-lang="en">Additional Consultations</span>
+          <span data-lang="el">Επιπλέον Συμβουλευτική</span>
+        </h4>
+        <p>
+          <span data-lang="en">For specific concerns or further information, please contact the clinic directly.</span>
+          <span data-lang="el">Για συγκεκριμένες απορίες ή περισσότερες πληροφορίες, παρακαλώ επικοινωνήστε με το ιατρείο.</span>
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-inner">
+
+    <div class="section-header">
+      <p class="section-label">
+        <span data-lang="en">Contact</span>
+        <span data-lang="el">Επικοινωνία</span>
+      </p>
+
+      <h2 class="section-title">
+        <span data-lang="en">Contact the clinic to arrange your appointment.</span>
+        <span data-lang="el">Επικοινωνήστε με το ιατρείο για να διευθετήσετε το ραντεβού σας.</span>
+      </h2>
+
+      <p class="section-sub">
+        <span data-lang="en">
+          For appointments, working hours or further information, please contact the clinic by phone.
+        </span>
+
+        <span data-lang="el">
+          Για ραντεβού, ώρες λειτουργίας ή περισσότερες πληροφορίες, παρακαλώ επικοινωνήστε τηλεφωνικά με το ιατρείο.
+        </span>
+      </p>
+    </div>
+
+    <div class="contact-box">
+      <div class="contact-grid">
+
+        <div class="contact-info">
+
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.37 2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.9a16 16 0 0 0 6.06 6.06l.92-.92a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+
+            <div class="contact-item-text">
+              <p class="label">
+                <span data-lang="en">Phone</span>
+                <span data-lang="el">Τηλέφωνο</span>
+              </p>
+
+              <p class="value">
+                <a href="tel:+35722424140">22 424 140</a>
+              </p>
+
+              <p class="sub">
+                <span data-lang="en">Call to arrange an appointment</span>
+                <span data-lang="el">Καλέστε για να διευθετήσετε ραντεβού</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+
+            <div class="contact-item-text">
+              <p class="label">
+                <span data-lang="en">Address</span>
+                <span data-lang="el">Διεύθυνση</span>
+              </p>
+
+              <p class="value">Ithakis 84 AB, Engomi 2400</p>
+
+              <p class="sub">
+                <span data-lang="en">Nicosia, Cyprus</span>
+                <span data-lang="el">Λευκωσία, Κύπρος</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+
+            <div class="contact-item-text">
+              <p class="label">
+                <span data-lang="en">Working Hours</span>
+                <span data-lang="el">Ώρες Λειτουργίας</span>
+              </p>
+
+              <p class="value">
+                <span data-lang="en">Mon – Fri: 8:00 am – 8:00 pm</span>
+                <span data-lang="el">Δευ – Παρ: 8:00 π.μ. – 8:00 μ.μ.</span>
+              </p>
+
+              <p class="sub">
+                <span data-lang="en">Please call before visiting to confirm availability</span>
+                <span data-lang="el">Παρακαλώ καλέστε πριν την επίσκεψή σας για επιβεβαίωση διαθεσιμότητας</span>
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="map-wrap">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3262.5!2d33.3417!3d35.1697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sIthakis+84+AB%2C+Engomi+2400%2C+Cyprus!5e0!3m2!1sen!2s!4v1234567890"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Location of Dr. Stelios Tsangarides clinic">
+          </iframe>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>
+    <strong>Dr. Stelios Tsangarides</strong> · 
+    <span data-lang="en">Obstetrician-Gynecologist</span>
+    <span data-lang="el">Μαιευτήρας-Γυναικολόγος</span>
+    · Ithakis 84 AB, Engomi 2400, Nicosia
+  </p>
+
+  <p>
+    <span data-lang="en">Call:</span>
+    <span data-lang="el">Τηλέφωνο:</span>
+    <a href="tel:+35722424140">22 424 140</a>
+  </p>
+
+  <p style="margin-top:8px;">
+    © 2026 Dr. Stelios Tsangarides. All rights reserved.
+  </p>
+</footer>
+
+<script>
+  function setLanguage(lang) {
+    const body = document.body;
+    const btnEn = document.getElementById("btnEn");
+    const btnEl = document.getElementById("btnEl");
+
+    if (lang === "el") {
+      body.classList.add("el");
+      btnEl.classList.add("active");
+      btnEn.classList.remove("active");
+      document.documentElement.lang = "el";
+    } else {
+      body.classList.remove("el");
+      btnEn.classList.add("active");
+      btnEl.classList.remove("active");
+      document.documentElement.lang = "en";
+    }
+  }
+
+  setLanguage("en");
+</script>
+
+</body>
+</html>
